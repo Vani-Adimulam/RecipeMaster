@@ -23,7 +23,7 @@ SEARCH PAGE
 ![MY Image](public/SearchIng.png)
 
 RECIPE LIST
-![My Image](public/RecipeList.png)
+![My Image](public/RecipesList.png)
 
 RECIPE DETAILS
 ![My Image](public/RecipeDetails.png)
