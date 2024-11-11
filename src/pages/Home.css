@@ -1,0 +1,80 @@
+/* Home.css */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("../assets/background.jpg"); /* Replace with the actual path */
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.home-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #5a9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #4a8;
+}
+
+.section-title {
+  font-size: 24px;
+  color: #333;
+  margin: 20px 0 10px;
+  border-bottom: 2px solid #5a9;
+  padding-bottom: 5px;
+}
+
+.recently-searched {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.recent-item {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.recipe-list-container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}

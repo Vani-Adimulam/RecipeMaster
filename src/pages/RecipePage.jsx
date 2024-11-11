@@ -1,30 +1,28 @@
 // src/pages/RecipePage.js
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { fetchRecipeDetails } from '../features/recipesSlice';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { fetchRecipeDetails } from "../features/recipesSlice";
+import "./RecipePage.css";
 
 const RecipePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const recipe = useSelector((state) => state.recipes.recipeDetails);
 
-  // Fetch recipe details when component mounts or when the recipe changes
   useEffect(() => {
-    const recipeId = window.location.pathname.split('/').pop(); // Get recipe id from URL
+    const recipeId = window.location.pathname.split("/").pop();
     if (recipeId) {
       dispatch(fetchRecipeDetails(recipeId));
     } else {
-      navigate('/');
+      navigate("/");
     }
   }, [dispatch, navigate]);
 
-  // If recipe details are not yet loaded
   if (!recipe) {
     return <div>Loading...</div>;
   }
 
-  // Extract ingredients and instructions from recipe data
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
     if (recipe[`strIngredient${i}`]) {
@@ -36,21 +34,27 @@ const RecipePage = () => {
   }
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>{recipe.strMeal}</h2>
-      <img src={recipe.strMealThumb} alt={recipe.strMeal} style={{ width: '300px', marginBottom: '20px' }} />
-      
-      <h3>Ingredients:</h3>
-      <ul>
-        {ingredients.map((item, index) => (
-          <li key={index}>
-            {item.ingredient}: {item.measure}
-          </li>
-        ))}
-      </ul>
+    <div className="recipe-page">
+      <h2 className="recipe-title">{recipe.strMeal}</h2>
+      <img
+        src={recipe.strMealThumb}
+        alt={recipe.strMeal}
+        className="recipe-image"
+      />
 
-      <h3>Instructions:</h3>
-      <p>{recipe.strInstructions}</p>
+      <h3 className="recipe-section-title">Ingredients:</h3>
+      <div className="recipe-ingredients">
+        <ul>
+          {ingredients.map((item, index) => (
+            <li key={index}>
+              {item.ingredient}: {item.measure}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <h3 className="recipe-section-title">Instructions:</h3>
+      <p className="recipe-instructions">{recipe.strInstructions}</p>
     </div>
   );
 };
