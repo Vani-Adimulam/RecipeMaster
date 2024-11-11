@@ -15,4 +15,4 @@ Install all the required dependencies like "react-redux, react-router-dom, redux
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-![My Image](/HomePage.png)
+![My Image](public/HomePage.png)
